@@ -24,11 +24,6 @@ function calorieCounting(elfInventoryData) {
 	console.log(elvesTotalCalories[0]);
 
 	// PART 2: get the total calorie amount of the top 3 elves carrying the most calories
-	let topThreeElvesTotal = elvesTotalCalories.reduce((accumulator, currentValue, index) => {
-		if (index >= 3) {
-			return accumulator + 0;
-		}
-		return accumulator + currentValue;
-	}, 0);
+	let topThreeElvesTotal = elvesTotalCalories.slice(0, 3).reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 	console.log(topThreeElvesTotal);
 }
