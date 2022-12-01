@@ -1,4 +1,4 @@
-function calorieHunting(elfInventoryData) {
+function calorieCounting(elfInventoryData) {
 	let elvesTotalCalories = [];
 
 	// parse the input into an easily accessible array
