@@ -20,7 +20,6 @@ function calorieHunting(elfInventoryData) {
 	// sort the array in descending order
 	elvesTotalCalories.sort((a, b) => b - a);
 
-	console.log(elvesTotalCalories);
 	// PART 1: get the calorie amount of the elf carrying the most calories
 	console.log(elvesTotalCalories[0]);
 
