@@ -56,8 +56,8 @@ function part2(rounds, handScores) {
 	printResult(`Part 2: ${totalScore}`);
 }
 
+// converts the player's move to the same set as opponent's moves for easier logic
 function convertMove(move) {
-	// converts the player's move to the same set as opponent's moves for easier logic
 	const playerMoves = {
 		"X": "A",
 		"Y": "B",
