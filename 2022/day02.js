@@ -1,4 +1,4 @@
-function rockPaperScissors() {
+function rockPaperScissors_02() {
 	try {
 		const handScores = {
 			"A": 1,
@@ -8,15 +8,15 @@ function rockPaperScissors() {
 		
 		const rounds = fileReader.data.split(/\r?\n/);
 
-		rockPaperScissorsPart1(rounds, handScores);
-		rockPaperScissorsPart2(rounds, handScores);
+		part1_02(rounds, handScores);
+		part2_02(rounds, handScores);
 	}
 	catch (e) {
 		printError(`${e.name}: ${e.message}`);
 	}
 }
 
-function rockPaperScissorsPart1(rounds, handScores) {
+function part1_02(rounds, handScores) {
 	let totalScore = 0;
 	for (let round of rounds) {
 		// skip empty lines
@@ -26,17 +26,17 @@ function rockPaperScissorsPart1(rounds, handScores) {
 		let moves = round.split(" ");
 
 		let opponentMove = moves[0];
-		let playerMove = convertMove(moves[1]);
+		let playerMove = convertMove_02(moves[1]);
 
 		let handScore = handScores[playerMove];
-		let outcomeScore = getOutcomeScore(opponentMove, playerMove);
+		let outcomeScore = getOutcomeScore_02(opponentMove, playerMove);
 
 		totalScore += handScore + outcomeScore;
 	}
 	printResult(`Part 1: ${totalScore}`);
 }
 
-function rockPaperScissorsPart2(rounds, handScores) {
+function part2_02(rounds, handScores) {
 	let totalScore = 0;
 	for (let round of rounds) {
 		// skip empty lines
@@ -46,10 +46,10 @@ function rockPaperScissorsPart2(rounds, handScores) {
 		let moves = round.split(" ");
 
 		let opponentMove = moves[0];
-		let playerMove = getPlayerMove(moves[1], opponentMove);
+		let playerMove = getPlayerMove_02(moves[1], opponentMove);
 
 		let handScore = handScores[playerMove];
-		let outcomeScore = getOutcomeScore(opponentMove, playerMove);
+		let outcomeScore = getOutcomeScore_02(opponentMove, playerMove);
 
 		totalScore += handScore + outcomeScore;
 	}
@@ -57,7 +57,7 @@ function rockPaperScissorsPart2(rounds, handScores) {
 }
 
 // converts the player's move to the same set as opponent's moves for easier logic
-function convertMove(move) {
+function convertMove_02(move) {
 	const playerMoves = {
 		"X": "A",
 		"Y": "B",
@@ -67,7 +67,7 @@ function convertMove(move) {
 }
 
 // get the player's move for part 2
-function getPlayerMove(winCondition, opponentMove) {
+function getPlayerMove_02(winCondition, opponentMove) {
 	// X - lose, Y - draw, Z - win
 	const playerMovesTable = {
 		"X": {
@@ -89,7 +89,7 @@ function getPlayerMove(winCondition, opponentMove) {
 	return playerMovesTable[winCondition][opponentMove];
 }
 
-function getOutcomeScore(opponentMove, playerMove) {
+function getOutcomeScore_02(opponentMove, playerMove) {
 	const winningMoves = {
 		"A": "C",
 		"B": "A",
