@@ -3,10 +3,65 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="text/javascript" src="2022/day1.js"></script>
+		<script type="text/javascript" src="utility.js"></script>
+		<script type="text/javascript" src="2022/day01.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
 		<title>Advent of Code</title>
 	</head>
-	<body>
-
+	<body onload="initialize()">
+		<h1>Advent of Code</h1>
+		<div id="file-upload-container">
+			<span>Upload Input File:</span>
+			<input type="file" name="input-file" id="input-file" />
+		</div>
+		<div id="calendar-container">
+			<div class="date-row">
+				<button class="unavailable">28</button>
+				<button class="unavailable">29</button>
+				<button class="unavailable">30</button>
+				<button class="active" onclick="calorieCounting()">01</button>
+				<button class="active">02</button>
+				<button class="inactive">03</button>
+				<button class="inactive">04</button>
+			</div>
+			<div class="date-row">
+				<button class="inactive">05</button>
+				<button class="inactive">06</button>
+				<button class="inactive">07</button>
+				<button class="inactive">08</button>
+				<button class="inactive">09</button>
+				<button class="inactive">10</button>
+				<button class="inactive">11</button>
+			</div>
+			<div class="date-row">
+				<button class="inactive">12</button>
+				<button class="inactive">13</button>
+				<button class="inactive">14</button>
+				<button class="inactive">15</button>
+				<button class="inactive">16</button>
+				<button class="inactive">17</button>
+				<button class="inactive">18</button>
+			</div>
+			<div class="date-row">
+				<button class="inactive">19</button>
+				<button class="inactive">20</button>
+				<button class="inactive">21</button>
+				<button class="inactive">22</button>
+				<button class="inactive">23</button>
+				<button class="inactive">24</button>
+				<button class="inactive">25</button>
+			</div>
+			<div class="date-row">
+				<button class="inactive">26</button>
+				<button class="inactive">27</button>
+				<button class="inactive">28</button>
+				<button class="inactive">29</button>
+				<button class="inactive">30</button>
+				<button class="inactive">31</button>
+				<button class="unavailable">01</button>
+			</div>
+		</div>
+		<div id="result-container"></div>
+		<div id="error-container"></div>
 	</body>
 </html>
