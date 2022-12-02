@@ -8,15 +8,15 @@ function rockPaperScissors() {
 		
 		const rounds = fileReader.data.split(/\r?\n/);
 
-		part1(rounds, handScores);
-		part2(rounds, handScores);
+		rockPaperScissorsPart1(rounds, handScores);
+		rockPaperScissorsPart2(rounds, handScores);
 	}
 	catch (e) {
 		printError(`${e.name}: ${e.message}`);
 	}
 }
 
-function part1(rounds, handScores) {
+function rockPaperScissorsPart1(rounds, handScores) {
 	let totalScore = 0;
 	for (let round of rounds) {
 		// skip empty lines
@@ -36,7 +36,7 @@ function part1(rounds, handScores) {
 	printResult(`Part 1: ${totalScore}`);
 }
 
-function part2(rounds, handScores) {
+function rockPaperScissorsPart2(rounds, handScores) {
 	let totalScore = 0;
 	for (let round of rounds) {
 		// skip empty lines

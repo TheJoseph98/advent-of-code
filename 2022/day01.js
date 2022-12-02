@@ -23,21 +23,21 @@ function calorieCounting(elfInventoryData) {
 		elvesTotalCalories.sort((a, b) => b - a);
 
 		// PART 1: get the calorie amount of the elf carrying the most calories
-		part1(elvesTotalCalories);
+		calorieCountingPart1(elvesTotalCalories);
 
 		// PART 2: get the total calorie amount of the top 3 elves carrying the most calories
-		part2(elvesTotalCalories)
+		calorieCountingPart2(elvesTotalCalories)
 	}
 	catch (e) {
 		printError(`${e.name}: ${e.message}`);
 	}
 }
 
-function part1(elvesTotalCalories) {
+function calorieCountingPart1(elvesTotalCalories) {
 	printResult(`Part 1: ${elvesTotalCalories[0]}`);
 }
 
-function part2(elvesTotalCalories) {
+function calorieCountingPart2(elvesTotalCalories) {
 	let topThreeElvesTotal = elvesTotalCalories.slice(0, 3).reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 	printResult(`Part 2: ${topThreeElvesTotal}`);
 }

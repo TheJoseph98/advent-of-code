@@ -12,6 +12,8 @@ function initialize() {
 
 function readFile() {
 	try {
+		clearResult();
+		clearError();
 		let file = this.files[0];
 		const reader = new FileReader();
 
