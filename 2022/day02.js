@@ -91,15 +91,15 @@ function getPlayerMove(winCondition, opponentMove) {
 
 function getOutcomeScore(opponentMove, playerMove) {
 	const winningMoves = {
-		"A": ["C"],
-		"B": ["A"],
-		"C": ["B"]
+		"A": "C",
+		"B": "A",
+		"C": "B"
 	};
 
 	if (playerMove === opponentMove) {
 		return 3;
 	}
-	else if (winningMoves[playerMove].includes(opponentMove)) {
+	else if (winningMoves[playerMove] === opponentMove) {
 		return 6;
 	}
 	else {
